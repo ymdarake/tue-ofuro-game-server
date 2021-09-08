@@ -11,9 +11,13 @@ defmodule TueOfuroGame.Server do
          ]}
       ])
 
-    Logger.info("Started listening on port $port...")
+    {port, _} =
+      System.get_env("PORT", "8888")
+      |> Integer.parse
 
-    :cowboy.start_clear(:http_listener, [{:port, 5984}], %{env: %{dispatch: dispatch}})
+    Logger.info("start listening on port " <> Integer.to_string(port))
+
+    :cowboy.start_clear(:http_listener, [{:port, port}], %{env: %{dispatch: dispatch}})
   end
 
   def stop(_state) do
