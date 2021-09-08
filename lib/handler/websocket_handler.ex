@@ -3,6 +3,8 @@ defmodule TueOfuroGame.WebsocketHandler do
   TueOfuroGame.WebsocketHandler
   """
 
+  @behaviour :cowboy_websocket
+
   @idle_timeout_milliseconds 120000 # 2 min
   @tick_interval_milliseconds 1000 # 1 sec
 
