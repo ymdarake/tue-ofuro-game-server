@@ -1,0 +1,9 @@
+version: '3'
+services:
+  server:
+    build: .
+    ports:
+      - '8888:8888'
+    environment:
+      - MIX_ENV=dev
+      - PORT=8888

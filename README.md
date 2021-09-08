@@ -1,6 +1,7 @@
 # TueOfuroGame
 
-**TODO: Add description**
+- `mix run --no-halt`
+- or `docker-compose up -d`
 
 ## Installation
 
@@ -18,4 +19,3 @@ end
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/tue_ofuro_game](https://hexdocs.pm/tue_ofuro_game).
-
