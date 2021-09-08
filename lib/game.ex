@@ -4,13 +4,8 @@ defmodule TueOfuroGame.Game do
 
   alias TueOfuroGame.{Game, Target}
 
-  @doc """
-  Creates a game with a `size` x `size` collection of squares
-  taken randomly from the given list of `buzzwords` where
-  each buzzword is of the form `%{phrase: "Upsell", points: 10}`.
-  """
-  def new() do
-    %Game{targets: Target.generate(10)}
+  def new(size) do
+    %Game{targets: Target.generate(size)}
   end
 
   def generate_targets() do

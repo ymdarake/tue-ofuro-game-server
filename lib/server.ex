@@ -2,6 +2,7 @@ defmodule TueOfuroGame.Server do
   use Application
   require Logger
 
+  # TODO: interact with the GameServer
   def start(_start_type, _start_args) do
     dispatch =
       :cowboy_router.compile([
