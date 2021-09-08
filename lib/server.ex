@@ -13,7 +13,7 @@ defmodule TueOfuroGame.Server do
 
     {port, _} =
       System.get_env("PORT", "8888")
-      |> Integer.parse
+      |> Integer.parse()
 
     Logger.info("start listening on port " <> Integer.to_string(port))
 
