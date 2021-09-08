@@ -1,14 +1,13 @@
-defmodule TueOfuroGame.Application do
+defmodule TueOfuroGame do
   use Application
 
-  def start(_start_type, _start_args) do
+  def start(_type, _args) do
     children = [
-      %{
-        id: TueOfuroGame.Server,
-        start: {TueOfuroGame.Server, :start, [[], []]}
-      },
-      {Registry, keys: :duplicate, name: :client_registry}
+      {Registry, keys: :unique, name: TueOfuroGame.GameRegistry},
+      TueOfuroGame.GameSupervisor
     ]
+
+    :ets.new(:games_table, [:public, :named_table])
 
     opts = [strategy: :one_for_one, name: TueOfuroGame.Supervisor]
     Supervisor.start_link(children, opts)
