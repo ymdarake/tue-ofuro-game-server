@@ -14,7 +14,7 @@ defmodule TueOfuroGame.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      mod: {TueOfuroGame.Application, {}},
+      mod: {TueOfuroGame, {}},
       extra_applications: [:logger]
     ]
   end

@@ -5,8 +5,10 @@ defmodule TueOfuroGame.WebsocketHandler do
 
   @behaviour :cowboy_websocket
 
-  @idle_timeout_milliseconds 120000 # 2 min
-  @tick_interval_milliseconds 1000 # 1 sec
+  # 2 min
+  @idle_timeout_milliseconds 120_000
+  # 1 sec
+  @tick_interval_milliseconds 1000
 
   require Logger
 
@@ -43,7 +45,6 @@ defmodule TueOfuroGame.WebsocketHandler do
     {:reply, {:text, message}, state}
   end
 
-
   def websocket_handle(_data, state) do
     {:ok, state}
   end
@@ -52,7 +53,6 @@ defmodule TueOfuroGame.WebsocketHandler do
     Logger.info("terminated")
     :ok
   end
-
 
   def broadcast(message) do
     Registry.dispatch(:client_registry, :clients, fn entries ->
